@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URI;
+//import arraylist and use it to store strings with incoming messages and user, and colon
 
 class Handler implements URLHandler {
     // The one bit of state on the server: a number that will be manipulated by
