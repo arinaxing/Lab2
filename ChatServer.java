@@ -3,11 +3,29 @@ import java.net.URI;
 //import arraylist and use it to store strings with incoming messages and user, and colon
 
 class Handler implements URLHandler {
-    // The one bit of state on the server: a number that will be manipulated by
-    // various requests.
-    int num = 0;
+    ArrayList<String> history = new ArrayList<>();
+    String message = null;
+    String user = null;
 
     public String handleRequest(URI url) {
+        if (url.getPath().contains("/add")) {
+            String[] parameters = url.getQuery().split("=");
+            String key = parameters[0];
+            String content = parameters[1];
+                if ("s".equals(key)){
+                    message = content;
+                } else if ("user".equals(key)){
+                    user = content;
+                }
+        }
+        return user + ": " + message;
+    }
+                    
+            
+
+
+
+        
         if (url.getPath().equals("/")) {
             return String.format("Number: %d", num);
         } else if (url.getPath().equals("/increment")) {
@@ -26,7 +44,7 @@ class Handler implements URLHandler {
     }
 }
 
-class NumberServer {
+class ChatServer {
     public static void main(String[] args) throws IOException {
         if(args.length == 0){
             System.out.println("Missing port number! Try any number between 1024 to 49151");
