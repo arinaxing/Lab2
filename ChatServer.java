@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 //import arraylist and use it to store strings with incoming messages and user, and colon
 
 class Handler implements URLHandler {
@@ -9,16 +10,17 @@ class Handler implements URLHandler {
 
     public String handleRequest(URI url) {
         if (url.getPath().contains("/add")) {
-            String[] parameters = url.getQuery().split("=");
-            String key = parameters[0];
-            String content = parameters[1];
-                if ("s".equals(key)){
-                    message = content;
-                } else if ("user".equals(key)){
-                    user = content;
-                }
-        }
+            String[] parameters = url.getQuery().split("&");
+                String content = parameters[0];
+                String userequals = parameters[1];
+            String[] contentParam = content.split("=");
+                String message = contentParam[1];
+            String[] userParam = content.split("=");
+                String user = userParam[1];
+            
+        
         return user + ": " + message;
+        }
     }
                     
             
