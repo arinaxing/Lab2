@@ -53,7 +53,7 @@ class ChatServer {
 Which methods in your code are called?
 What are the relevant arguments to those methods, and the values of any relevant fields of the class?
 How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
-![Image](1stMessage.jpg)
+![Image](1stMessage.png)
 The handleRequest and main method are called. The relevant arguments to the handleRequest class is the url that is taken in.
 This url is used to extract parameters. Using the ```getQuery()``` command, we split the query at ```&``` and havee our two parameters
 with one beeing the user side and one being the message side. Within these two parameters, we split them further at the ```=``` which appears
@@ -63,19 +63,19 @@ log stored will be printed in a new line. An empty string called Printed was mad
 and user, that was the only line printed out.  No values got changed because history only had one string stored and it printed that string out. 
 
 
-![Image](2ndMessage.jpg)
+![Image](2ndMessage.png)
 Like the previous image, the handleRequest and main method are called. The parameters remain the same. The message and user are extracted from this new message. One
 thing different is that because history is an arrayList so it now contains both the previous user and message and the current user and message. So when the code proceeds to the 
 for loop to print out  the array list, both lines are printed. Therefore, history is the only value changed.
 
 ##Part 2
-![Image](MyComputer.jpg)
+![Image](MyComputer.png)
 The absolute path to my private key is therefore /Users/arinaxing/.ssh/id_rsa
 
-![Image](publickey.jpg)
+![Image](publickey.png)
 /home/linux/ieng6/oce/63/763/rxing/.ssh
 
-![Image](noPass.jpg)
+![Image](noPass.png)
 
 ##Part 3
 In these last two weeks I basically everything that was taught. I never knew we can log onto other computers from our own computer. But what I found coolest was creating our own "website"
