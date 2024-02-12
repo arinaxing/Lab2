@@ -63,10 +63,8 @@ log stored will be printed in a new line. Before the ```/add-message``` is calle
 
 
 ![Image](2ndMessage.png)
-Before ```/add-message``` is called,
-Like the previous image, the handleRequest and main method are called. The parameters remain the same. The message and user are extracted from this new message. One
-thing different is that because history is an arrayList so it now contains both the previous user and message and the current user and message. So when the code proceeds to the 
-for loop to print out  the array list, both lines are printed. Therefore, history is the only value changed.
+Like the previous image, the handleRequest and main method are called. The parameters remain the same. The message and user are extracted from this new message. Before ```/add-message``` is called, the ```history``` arrayList currently has one string contained from the first call to ```/add-message```. Now that ```/add-message``` is called again, ```history``` now contains two strings. So when the code proceeds to the 
+for loop to print out  the array list, both lines are printed. Therefore, history is the value changed.
 
 ##Part 2
 ![Image](MyComputer.png)
