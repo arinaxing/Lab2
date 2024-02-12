@@ -59,11 +59,11 @@ This url is used to extract parameters. Using the ```getQuery()``` command, we s
 with one beeing the user side and one being the message side. Within these two parameters, we split them further at the ```=``` which appears
 on both sides of ```&```. Now, we can extract the user and message content by referring to the correct parameters.
 The relevant fields are history which is an arrayList used to store the user and message entered separated by a colon. ```\n``` is used so that the next 
-log stored will be printed in a new line. An empty string called Printed was made so the content stored in history could be iterated and printed out. Since this was the first message
-and user, that was the only line printed out.  No values got changed because history only had one string stored and it printed that string out. 
+log stored will be printed in a new line. Before the ```/add-message``` is called,  ```history``` is an empty arrayList. So its current value is null initially. An empty string called ```Printed``` was made so the content stored in ```history``` could be iterated and printed out (before ```/add-message``` there is nothing in ```history```). After ```/add-message```, the user and message was extracted and stored in ```history```. Then when ```history``` was iterated through, that was the only line printed out.  ```history``` changed to being an empty arrayList to an arrayList with one string stored. 
 
 
 ![Image](2ndMessage.png)
+Before ```/add-message``` is called,
 Like the previous image, the handleRequest and main method are called. The parameters remain the same. The message and user are extracted from this new message. One
 thing different is that because history is an arrayList so it now contains both the previous user and message and the current user and message. So when the code proceeds to the 
 for loop to print out  the array list, both lines are printed. Therefore, history is the only value changed.
@@ -73,7 +73,8 @@ for loop to print out  the array list, both lines are printed. Therefore, histor
 The absolute path to my private key is therefore /Users/arinaxing/.ssh/id_rsa
 
 ![Image](publickey.png)
-/home/linux/ieng6/oce/63/763/rxing/.ssh
+/home/linux/ieng6/oce/63/763/rxing/.ssh/authorized_keys
+
 
 ![Image](noPass.png)
 
